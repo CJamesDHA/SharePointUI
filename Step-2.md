@@ -2,9 +2,9 @@
 
 # Configure Project
 
-### Package Configuration (package.json)
+### Update Project Name
 
-#### 1) Update the Project Name
+Update the ```./package.json``` "name" property to the project name. This name will be referenced as the output file for the solution.
 
 ```js
 {
