@@ -1,13 +1,11 @@
 ### [[Previous Step|Step 3]]
 
-# Main File
+# Main File (src/index.ts)
 
 - We will need to configure the datatables.net library
    - Reference [this blog post](https://dattabase.com/blog/typescript-and-datatables.net) for additional details
 - Define the global variable for this solution to make the configuration available
 - Get the element referenced in ```assets/index.html``` and render the dashboard to it
-
-### Main Source (src/index.ts)
 
 ```ts
 import { Configuration } from "./cfg";
