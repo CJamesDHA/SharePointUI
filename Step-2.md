@@ -1,6 +1,6 @@
 ### [[Previous Step|Step 1]]
 
-# Solution Overview
+# Configure Project
 
 ### Package Configuration (package.json)
 
