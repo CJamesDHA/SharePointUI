@@ -10,7 +10,11 @@ This demo will give a step-by-step tutorial of creating a basic dashboard soluti
 ## Overview
 
 - [[Clone Project|Step 1]]
-- [[Solution Overview|Step 2]]
-- [[Configure Project|Step 3]]
-- [[Build Solution|Step 4]]
-- [[Demo|Step 5]]
+- [[Configure Project|Step 2]]
+- [[SharePoint Assets|Step 3]]
+- [[Main File|Step 4]]
+- [[Dashboard|Step 5]]
+  - [[Navigation|Step 6]]
+  - [[Filter|Step 7]]
+  - [[Table|Step 8]]
+- [[Demo|Step 9]]
