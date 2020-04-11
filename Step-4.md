@@ -2,10 +2,10 @@
 
 # Main File
 
-1. We will need to configure the datatables.net library
+- We will need to configure the datatables.net library
    - Reference [this blog post](https://dattabase.com/blog/typescript-and-datatables.net) for additional details
-2. Define the global variable for this solution to make the configuration available
-3. Get the element referenced in ```assets/index.html``` and render the dashboard to it
+- Define the global variable for this solution to make the configuration available
+- Get the element referenced in ```assets/index.html``` and render the dashboard to it
 
 ### Update Global Variables (src/index.ts)
 
