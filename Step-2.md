@@ -30,6 +30,18 @@ npm i --save datatables.net datatables.net-dt
 npm i --save-dev url-loader
 ```
 
+### WebPack Configuration
+
+The datatables.net-dt css file will require the url-loader in order to bundle the images into the output file. Add the following to the module rules array.
+
+```js
+// Handle Image Files
+{
+  test: /\.(jpe?g|png|gif|svg)$/,
+  use: "url-loader"
+}
+```
+
 ### Update Global Variables (src/strings.ts)
 
 The last file to update is the global constants. We will be referencing them in later code files.
