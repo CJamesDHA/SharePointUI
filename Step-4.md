@@ -7,7 +7,7 @@
 - Define the global variable for this solution to make the configuration available
 - Get the element referenced in ```assets/index.html``` and render the dashboard to it
 
-### Update Global Variables (src/index.ts)
+### Main Source (src/index.ts)
 
 ```ts
 import { Configuration } from "./cfg";
