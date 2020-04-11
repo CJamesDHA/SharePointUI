@@ -23,12 +23,16 @@ We will be using the following libraries:
 - url-loader
    - Required to bundle the css reference from datatables.net-dt
 
+Run the following commands to install the libraries.
+
 ```
 npm i --save datatables.net datatables.net-dt
 npm i --save-dev url-loader
 ```
 
 ### Update Global Variables (src/strings.ts)
+
+The last file to update is the global constants. We will be referencing them in later code files.
 
 ```ts
 /**
@@ -45,5 +49,7 @@ export default {
     SolutionUrl: "/sites/dev/siteassets/sp-dashboard/index.html"
 }
 ```
+
+_Note - The solution url must match your environment._
 
 ### [[Next Step|Step 3]]
