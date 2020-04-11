@@ -12,8 +12,4 @@ We don't need a reference to the starter project, so we will remove the .git hid
 
 ```rm -r my-project/.git```
 
-### Update Project Name
-
-Update the ```./package.json``` "name" property to the project name. This name will be referenced as the output file for the solution.
-
 ### [[Next Step|Step 2]]
