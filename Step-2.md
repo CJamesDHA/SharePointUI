@@ -50,6 +50,6 @@ export default {
 }
 ```
 
-_Note - The solution url must match your environment._
+_The solution url must match your environment._
 
 ### [[Next Step|Step 3]]
