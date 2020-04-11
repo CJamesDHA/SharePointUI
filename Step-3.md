@@ -4,6 +4,16 @@
 
 ### Configuration (src/cfg.ts)
 
+We will use the SharePoint Configuration helper class to create a list for the dashboard to store data in.
+
+- Fields
+  - Item Type - A required choice field with a defaulted value.
+  - Status - A required choice field, that is not displayed in the new form.
+- Views
+  - Update the default view to include the custom fields.
+- Methods
+  - addToPage - Adds a content editor library and configures it to point to the dashboard solution.
+
 ```ts
 import { Helper, SPTypes } from "gd-sprest-bs";
 import Strings from "./strings";
