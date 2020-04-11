@@ -28,4 +28,22 @@ npm i --save datatables.net datatables.net-dt
 npm i --save-dev url-loader
 ```
 
+### Update Global Variables (src/strings.ts)
+
+```ts
+/**
+ * Global Constants
+ */
+export default {
+    AppElementId: "sp-dashboard",
+    GlobalVariable: "SPDashboard",
+    Lists: {
+        Main: "Dashboard"
+    },
+    ProjectName: "SP Dashboard",
+    ProjectDescription: "Created using the gd-sprest-bs library.",
+    SolutionUrl: "/sites/dev/siteassets/sp-dashboard/index.html"
+}
+```
+
 ### [[Next Step|Step 3]]
