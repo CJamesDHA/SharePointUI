@@ -2,6 +2,18 @@
 
 # SharePoint Assets
 
+### Content Editor Template (assets/index.html)
+
+Set the html file for the content editor webpart to reference.
+
+```html
+<!-- The element to render the solution to -->
+<div id="sp-dashboard" class="bs"></div>
+
+<!-- Reference the solution script -->
+<script src="./sp-dashboard.js"></script>
+```
+
 ### Configuration (src/cfg.ts)
 
 We will use the SharePoint Configuration helper class to create a list for the dashboard to store data in.
