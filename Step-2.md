@@ -13,7 +13,7 @@ Update the ```./package.json``` "name" property to the project name. This name w
 }
 ```
 
-#### 2) Add Libraries
+### Add Libraries
 
 We will be using the following libraries:
 
