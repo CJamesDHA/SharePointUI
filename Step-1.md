@@ -10,6 +10,6 @@ The first step is to clone the project into a new folder.
 
 We don't need a reference to the starter project, so we will remove the .git hidden directory.
 
-```rm -r my-project/.git```
+```rm -r sp-dashboard/.git```
 
 ### [[Next Step|Step 2]]
