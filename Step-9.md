@@ -4,7 +4,10 @@
 
 ### Build Solution
 
-To build the solution, run ```npm run build``` in the console.
+- Link TypeScript
+  - `npm link typescript` _Only needs to be done once_
+- Build Solution
+  - `npm run build`
 
 ![Build Solution](images/build-solution.png)
 
