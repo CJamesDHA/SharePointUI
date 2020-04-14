@@ -12,7 +12,7 @@ Set the dashboard template to include a navigation, filter and table element.
         <div id="navigation" class="col"></div>
     </div>
     <div class="row">
-        <div id="filter" class="col my-4"></div>
+        <div id="filter" class="col mb-4"></div>
     </div>
     <div class="row">
         <div id="table" class="col"></div>
