@@ -7,10 +7,16 @@
 Set the dashboard template to include a navigation, filter and table element.
 
 ```html
-<div class="row">
-    <div id="navigation"></div>
-    <div id="filter"></div>
-    <div id="table"></div>
+<div>
+    <div class="row">
+        <div id="navigation" class="col"></div>
+    </div>
+    <div class="row">
+        <div id="filter" class="col"></div>
+    </div>
+    <div class="row">
+        <div id="table" class="col"></div>
+    </div>
 </div>
 ```
 
