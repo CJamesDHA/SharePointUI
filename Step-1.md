@@ -12,10 +12,11 @@ We don't need a reference to the starter project, so we will remove the .git hid
 
 ```rm -r sp-dashboard/.git```
 
-### Remove Components Directory
+### Remove Unused Directories
 
-We will not be using the "src/components" directory for this solution.
+We will not be using some of the code for this solution. Remove the following directories:
 
+```rm -r sp-dashboard/dist```
 ```rm -r sp-dashboard/src/components```
 
 ### [[Next Step|Step 2]]
