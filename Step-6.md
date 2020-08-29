@@ -4,9 +4,13 @@
 
 ### Styles (src/dashboard/styles.css)
 
-We will be using the Bootstrap navbar component to display the navigation. It includes a search textbox, which we will use to filter the datatable. We will need to hide the default search box created by the datatables.net plug-in.
+- Import the datatables.net bootstrap styling.
+- Hide the datatables.net search box
 
 ```css
+/** Datatables Bootstrap Plugin */
+@import "datatables.net-bs4";
+
 /** Hide the datatable search box */
 #table .dataTables_filter {
     display: none;
