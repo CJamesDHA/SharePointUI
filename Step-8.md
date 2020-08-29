@@ -19,7 +19,8 @@
   - applyFilter - Calls the render event passing the value from the filter component
   - search - Calls the datatables.net search method passing the value form the navbar search textbox
 ```ts
-import { Components, jQuery, List, SPTypes, Types, Helper } from "gd-sprest-bs";
+import * as jQuery from "jquery";
+import { Components, Helper, List, SPTypes, Types } from "gd-sprest-bs";
 import Strings from "../strings";
 
 /**
@@ -146,8 +147,8 @@ export class Table {
      * Public Interface
      */
 
-    // Applies a filter to the table
-    applyFilter(filter: string) {
+    // Filters to the table
+    filter(filter: string) {
         // Render the table
         this.render(filter);
     }
