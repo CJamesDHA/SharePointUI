@@ -2,7 +2,7 @@
 
 # Dashboard
 
-### Template (src/dashboard/index.html)
+### Template (src/dashboard/template.html)
 
 Set the dashboard template to include a navigation, filter and table element.
 
@@ -38,7 +38,7 @@ Set the dashboard template to include a navigation, filter and table element.
 import { Filter } from "./filter";
 import { Navigation } from "./navigation";
 import { Table } from "./table";
-import * as HTML from "./index.html";
+import * as HTML from "./template.html";
 import "./styles.css";
 
 /**
@@ -81,9 +81,9 @@ export class Dashboard {
         // Render the filter
         new Filter({
             el: this._el.querySelector("#filter"),
-            onChange: value => {
+            onFilter: value => {
                 // Filter the table data
-                table.applyFilter(value);
+                table.filter(value);
             }
         });
 
