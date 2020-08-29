@@ -19,20 +19,20 @@ We will be using the following libraries:
 
 - Datatables.net
    - datatables.net
-   - datatables.net-dt
+   - datatables.net-bs4
 - url-loader
    - Required to bundle the css reference from datatables.net-dt
 
 Run the following commands to install the libraries.
 
 ```
-npm i --save datatables.net datatables.net-dt
+npm i --save datatables.net datatables.net-bs4
 npm i --save-dev url-loader
 ```
 
 ### WebPack Configuration
 
-The datatables.net-dt css file will require the url-loader in order to bundle the images into the output file. Add the following to the module rules array.
+The datatables.net-bs4 css file will require the url-loader in order to bundle the images into the output file. Add the following to the module rules array.
 
 ```js
 // Handle Image Files
