@@ -18,6 +18,7 @@ Update the ```./package.json``` "name" property to the project name. This name w
 We will be using the following libraries:
 
 - Datatables.net
+   - jquery
    - datatables.net
    - datatables.net-bs4
 - url-loader
