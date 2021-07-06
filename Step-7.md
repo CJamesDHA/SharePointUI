@@ -1,71 +1,152 @@
 ### [[Previous Step|Step 6]]
 
-# Filter (src/dashboard/filter.ts)
+# Main Application (src/app.ts)
+
+The main application class.
 
 - Initialization
-  - Save the properties
-  - Render the filter
-- Card
-  - Reference the [Bootstrap documentation](https://getbootstrap.com/docs/4.4/components/card/) for details of the card component.
-  - Render within a card to give an outline to the filter
-- Checkbox
-  - Reference the [Bootstrap documentation](https://getbootstrap.com/docs/4.4/components/forms/#checkboxes-and-radios) for details of the checkbox component.
-  - Set the "Inline" property to render them as a row
-  - Create items for each choice defined in the ```src/cfg.ts``` file for the ```Status``` field
-  - Set the type to be a ```Switch```
-  - Set the ```onChange``` event to call this filter's change event in its properties
+    - Sets the list name for the item form
+    - Loads the list data
+    - Loads the dashboard filters
+    - Renders the application
+- Render - Renders the dattatable dashboard
+    - Configuration
+        - hideHeader - Hides the header jumbotron
+        - rows - The list data items
+        - useModal - Flag to show the item forms in a modal and not a canvas slideout
+        - filters - Allows for the status to be filtered
+        - navigation - Ability to create an item
+        - footer - Displays the version #
+        - dtProps - The datatables.net properties
+        - columns - The column information for the table
 
 ```ts
-import { Components } from "gd-sprest-bs";
-
-// Filter Properties
-export interface IFilterProps {
-    el: HTMLElement;
-    onChange: (value: string) => void;
-}
+import { Dashboard, ItemForm } from "dattatable";
+import { Components, Types } from "gd-sprest-bs";
+import { DataSource } from "./ds";
+import Strings from "./strings";
 
 /**
- * Filter
+ * Main Application
  */
-export class Filter {
-    private _props: IFilterProps = null;
-
+export class App {
     // Constructor
-    constructor(props: IFilterProps) {
-        // Save the parameters
-        this._props = props;
+    constructor(el: HTMLElement) {
+        // Set the list name
+        ItemForm.ListName = Strings.Lists.Main;
 
-        // Render the filter
-        this.render();
+        // Load the data
+        DataSource.load().then(items => {
+            // Load the filters
+            DataSource.loadStatusFilters().then(() => {
+                // Render the dashboard
+                this.render(el, items);
+            });
+        });
     }
 
-    // Render the filter
-    private render() {
-        // Render a card
-        Components.Card({
-            el: this._props.el,
-            body: [
+    // Renders the dashboard
+    private render(el: HTMLElement, items: any[]) {
+        // Create the dashboard
+        let dashboard = new Dashboard({
+            el,
+            hideHeader: true,
+            rows: items,
+            useModal: true,
+            filters: [{
+                header: "By Status",
+                items: DataSource.StatusFilters,
+                onFilter: (value) => {
+                    // Filter the table
+                    dashboard.filter(2, value);
+                }
+            }],
+            navigation: {
+                title: Strings.ProjectName,
+                items: [
+                    {
+                        className: "btn-outline-dark",
+                        text: "Create Item",
+                        isButton: true,
+                        onClick: () => {
+                            // Create an item
+                            ItemForm.create({
+                                onUpdate: () => {
+                                    // Load the data
+                                    DataSource.load().then(items => {
+                                        // Refresh the table
+                                        dashboard.refresh(items);
+                                    });
+                                }
+                            });
+                        }
+                    }
+                ]
+            },
+            footer: {
+                itemsEnd: [
+                    {
+                        text: "v" + Strings.Version
+                    }
+                ]
+            },
+            dtProps: {
+                dom: 'rt<"row"<"col-sm-4"l><"col-sm-4"i><"col-sm-4"p>>',
+                "columnDefs": [
+                    {
+                        "targets": 0,
+                        "orderable": false,
+                        "searchable": false
+                    }
+                ]
+            },
+            columns: [
                 {
-                    onRender: (el) => {
-                        // Render checkboxes
-                        Components.CheckboxGroup({
+                    name: "",
+                    title: "Title",
+                    onRenderCell: (el, column, item: Types.SP.ListItem) => {
+                        // Render a buttons
+                        Components.ButtonGroup({
                             el,
-                            isInline: true,
-                            type: Components.CheckboxGroupTypes.Switch,
-                            items: [
-                                { label: "Draft" },
-                                { label: "Submitted" },
-                                { label: "Rejected" },
-                                { label: "Pending Approval" },
-                                { label: "Approved" },
-                                { label: "Archived" }
-                            ],
-                            onChange: (item: Components.ICheckboxGroupItem) => {
-                                // Call the change event
-                                this._props.onChange(item ? item.label : "");
-                            }
+                            buttons: [
+                                {
+                                    text: item.Title,
+                                    type: Components.ButtonTypes.OutlinePrimary,
+                                    onClick: () => {
+                                        // Show the display form
+                                        ItemForm.view({
+                                            itemId: item.Id
+                                        });
+                                    }
+                                },
+                                {
+                                    text: "Edit",
+                                    type: Components.ButtonTypes.OutlineSuccess,
+                                    onClick: () => {
+                                        // Show the display form
+                                        ItemForm.edit({
+                                            itemId: item.Id,
+                                            onUpdate: () => {
+                                                // Refresh the data
+                                                DataSource.load().then(items => {
+                                                    // Update the data
+                                                    dashboard.refresh(items);
+                                                });
+                                            }
+                                        });
+                                    }
+                                }
+                            ]
                         });
                     }
+                },
+                {
+                    name: "ItemType",
+                    title: "Item Type"
+                },
+                {
+                    name: "Status",
+                    title: "Status"
                 }
             ]
         });

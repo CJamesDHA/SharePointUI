@@ -1,95 +1,86 @@
 ### [[Previous Step|Step 4]]
 
-# Dashboard
+# Configuration File (src/cfg.ts)
 
-### Template (src/dashboard/index.html)
+This file will create the SharePoint assets listed below.
 
-Set the dashboard template to include a navigation, filter and table element.
-
-```html
-<div>
-    <div class="row">
-        <div id="navigation" class="col"></div>
-    </div>
-    <div class="row">
-        <div id="filter" class="col mb-4"></div>
-    </div>
-    <div class="row">
-        <div id="table" class="col"></div>
-    </div>
-</div>
-```
-
-### Code (src/dashboard/index.ts)
-
-- Initialization
-  - Create the dashboard element using the html template
-  - Render the dashboard
-- Navigation
-  - Pass the navigation element to the component
-  - Define the onSearch event to pass the value to the table component
-- Filter
-  - Pass the filter element to the component
-  - Define the onFilter event to pass the value to the table component
-- Table
-  - Pass the table element to the component
+- Main List
+    - Creates custom fields
+    - Updates default view
+- Custom Configuration Methods
+    - addToPage - Method to add a webpart to a classic page.
 
 ```ts
-import { Filter } from "./filter";
-import { Navigation } from "./navigation";
-import { Table } from "./table";
-import * as HTML from "./index.html";
-import "./styles.css";
+import { Helper, SPTypes } from "gd-sprest-bs";
+import Strings from "./strings";
 
 /**
- * Dashboard
+ * SharePoint Assets
  */
-export class Dashboard {
-    private _el: HTMLElement = null;
+export const Configuration = Helper.SPConfig({
+    ListCfg: [
+        {
+            ListInformation: {
+                Title: Strings.Lists.Main,
+                BaseTemplate: SPTypes.ListTemplateType.GenericList
+            },
+            CustomFields: [
+                {
+                    name: "ItemType",
+                    title: "Item Type",
+                    type: Helper.SPCfgFieldType.Choice,
+                    defaultValue: "Type 3",
+                    required: true,
+                    choices: [
+                        "Type 1", "Type 2", "Type 3", "Type 4", "Type 5"
+                    ]
+                } as Helper.IFieldInfoChoice,
+                {
+                    name: "Status",
+                    title: "Status",
+                    type: Helper.SPCfgFieldType.Choice,
+                    defaultValue: "Draft",
+                    required: true,
+                    showInNewForm: false,
+                    choices: [
+                        "Draft", "Submitted", "Rejected", "Pending Approval",
+                        "Approved", "Archived"
+                    ]
+                }
+            ],
+            ViewInformation: [
+                {
+                    ViewName: "All Items",
+                    ViewFields: [
+                        "LinkTitle", "ItemType", "Status"
+                    ]
+                }
+            ]
+        }
+    ]
+});
 
-    /**
-     * Renders the project.
-     * @param el - The element to render the dashboard to.
-     */
-    constructor(elParent: HTMLElement) {
-        // Create the element
-        let el = document.createElement("div");
-        el.innerHTML = HTML as any;
-        this._el = el.firstChild as HTMLElement;
+// Adds the solution to a classic page
+Configuration["addToPage"] = (pageUrl: string) => {
+    // Add a content editor webpart to the page
+    Helper.addContentEditorWebPart(pageUrl, {
+        contentLink: Strings.SolutionUrl,
+        description: Strings.ProjectDescription,
+        frameType: "None",
+        title: Strings.ProjectName
+    }).then(
+        // Success
+        () => {
+            // Load
+            console.log("[" + Strings.ProjectName + "] Successfully added the solution to the page.", pageUrl);
+        },
 
-        // Append it to the parent element
-        elParent.appendChild(this._el);
-
-        // Render the dashboard
-        this.render();
-    }
-
-    /**
-     * Main render method
-     * @param el - The element to render the dashboard to.
-     */
-    private render() {
-        // Render the navigation
-        new Navigation({
-            el: this._el.querySelector("#navigation"),
-            onSearch: value => {
-                // Search the table
-                table.search(value);
-            }
-        });
-
-        // Render the filter
-        new Filter({
-            el: this._el.querySelector("#filter"),
-            onChange: value => {
-                // Filter the table data
-                table.applyFilter(value);
-            }
-        });
-
-        // Render the table
-        let table = new Table(this._el.querySelector("#table"));
-    }
+        // Error
+        ex => {
+            // Load
+            console.log("[" + Strings.ProjectName + "] Error adding the solution to the page.", ex);
+        }
+    );
 }
 ```
 
