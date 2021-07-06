@@ -19,32 +19,9 @@ We will update the project's configuration (package.json) file, which was create
 
 ### TypeScript (./tsconfig.json)
 
-Refer to [typescript's documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for an overview of the configuration file. In VS Code, create a file called ```tsconfig.json``` in the root folder.
 
 ```
 {
-    "compilerOptions": {
-        "lib": [
-            "dom",
-            "es2015"
-        ],
-        "target": "es5"
-    },
-    "include": [
-        "src/**/*"
-    ]
-}
-```
-
-### Webpack (./webpack.config.js)
-
-Refer to [webpack's documentation](https://webpack.js.org/configuration/) for an overview of the configuration file. In VS Code, create a file called ```webpack.config.js``` in the root folder. To simplify the configuration and limit the 3rd party libraries, we will reference the distribution file of the gd-sprest-bs library and use the "externals" property to define the library references. This library contains Bootstrap (full css + js), gd-sprest, and jQuery.
-
-```
-var project = require("./package.json");
-var path = require("path");
-
-// Return the configuration
 module.exports = (env, argv) => {
     var isDev = argv.mode !== "production";
     return {

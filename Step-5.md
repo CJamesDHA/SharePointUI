@@ -60,6 +60,7 @@ export const Configuration = Helper.SPConfig({
     ]
 });
 
+<<<<<<< HEAD
 // Adds the solution to a classic page
 Configuration["addToPage"] = (pageUrl: string) => {
     // Add a content editor webpart to the page
@@ -74,6 +75,16 @@ Configuration["addToPage"] = (pageUrl: string) => {
             // Load
             console.log("[" + Strings.ProjectName + "] Successfully added the solution to the page.", pageUrl);
         },
+=======
+        // Render the filter
+        new Filter({
+            el: this._el.querySelector("#filter"),
+            onFilter: value => {
+                // Filter the table data
+                table.filter(value);
+            }
+        });
+>>>>>>> 63293d3376b8fc7769edb3444b44d3e22efb903f
 
         // Error
         ex => {

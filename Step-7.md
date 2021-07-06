@@ -108,6 +108,7 @@ export class App {
                         // Render a buttons
                         Components.ButtonGroup({
                             el,
+<<<<<<< HEAD
                             buttons: [
                                 {
                                     text: item.Title,
@@ -137,6 +138,22 @@ export class App {
                                     }
                                 }
                             ]
+=======
+                            isInline: true,
+                            type: Components.CheckboxGroupTypes.Switch,
+                            items: [
+                                { label: "Draft" },
+                                { label: "Submitted" },
+                                { label: "Rejected" },
+                                { label: "Pending Approval" },
+                                { label: "Approved" },
+                                { label: "Archived" }
+                            ],
+                            onChange: (item: Components.ICheckboxGroupItem) => {
+                                // Call the change event
+                                this._props.onFilter(item ? item.label : "");
+                            }
+>>>>>>> 63293d3376b8fc7769edb3444b44d3e22efb903f
                         });
                     }
                 },
