@@ -18,12 +18,12 @@ This solution uses the same list we created. If you uninstalled it, please re-in
 
 Click on the "+" button to add a webpart.
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/addSPFxWebPart.png|alt=add spfx webpart]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/addSPFxWebPart.png|alt=add spfx webpart]]
 
 Select the "ListWebPart" and the table will be displayed.
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/viewListTableSPFxWP.png|alt=view table]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/viewListTableSPFxWP.png|alt=view table]]
 
 Clicking on "Edit" will display the edit form.
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/editItemFormSPFx.png|alt=edit item form]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/editItemFormSPFx.png|alt=edit item form]]

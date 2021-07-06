@@ -31,21 +31,21 @@ _Note - Wait for the list installation to complete, before generating the test d
 
 _Note - If you are using IE, the 'Promise' library will need to be included. Reference the [webpack configuration](https://gunjandatta.github.io/dev/webpack) documentation for additional details._
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/installSolution.png|alt=install solution]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/installSolution.png|alt=install solution]]
 
 ## Add WebPart to Page
 
 Create a blank webpart page, edit it and add this webpart to it.
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/addWebPart.png|alt=add webpart]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/addWebPart.png|alt=add webpart]]
 
 After the page refreshes, edit the configuration and select the test list we created.
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/wpConfiguration.png|alt=webpart configuration]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/wpConfiguration.png|alt=webpart configuration]]
 
 Save the webpart, wait for the page to refresh and close the page to view the list data.
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/viewListTable.png|alt=view list table]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/viewListTable.png|alt=view list table]]
 
 ## Uninstall the solution
 
@@ -55,6 +55,6 @@ To uninstall the solution, simply run the following:
 WPList.Configuration.uninstall();
 ```
 
-[[https://github.com/gunjandatta/sp-listwebpart/blob/master/images/uninstallSolution.png|alt=uninstall solution]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/uninstallSolution.png|alt=uninstall solution]]
 
 ### [[Next Step|Step 11]]
