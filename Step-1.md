@@ -10,8 +10,6 @@ Create the project folder, and navigate to it in your console. Below is the comm
 npm init --y
 ```
 
-#### Example
-
 [[https://github.com/gunjandatta/sp-dashboard.wiki/blob/master/images/createProject.png|alt=create project]]
 
 ### Download Libraries
