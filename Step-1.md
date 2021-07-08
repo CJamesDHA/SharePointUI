@@ -33,7 +33,7 @@ npm i --save dattatable gd-sprest-bs moment datatables.net datatables.net-bs5 jq
 _The 'i' is for "install"_
 _The '--save' will update the package.json file's "dependencies" property._
 
-[[wiki/imagesinstallDependencies.png|alt=install dependencies]]
+[[wiki/images/installDependencies.png|alt=install dependencies]]
 
 #### Required for Packaging Solution
 
@@ -56,6 +56,6 @@ npm i --save-dev @babel/core @babel/preset-env webpack webpack-cli babel-loader 
 ```
 _The '--save-dev' will update the package.json file's "devDependencies" property._
 
-[[wiki/imagesinstallDevDependencies.png|alt=install babel]]
+[[wiki/images/installDevDependencies.png|alt=install babel]]
 
 ### [[Next Step|Step 2]]
