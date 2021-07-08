@@ -6,13 +6,23 @@
 
 The following command **MUST** be run the first time: ```gulp trust-dev-cert```
 
-## Build and Host the Solution
+## Build App Package
 
-To build the solution, simply run ```gulp serve --nobrowser```. This will allow us to test the webpart in the local workbench. Reference the [SharePoint Documentation](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part#preview-the-web-part-in-sharepoint) for additional information on this.
+From the root of the project, run the ```npm run all``` command to build all solutions.
 
-## View WebPart
+### Upload the App Package
 
-This solution uses the same list we created. If you uninstalled it, please re-install the list with the test data. Access the workbench by accessing ```https://[tenant].sharepoint.com/_layouts/15/workbench.aspx```.
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/addSPFxPackage.png|alt=add spfx package]]
+
+Deploy the solution
+
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/deploySolution.png|alt=deploy solution]]
+
+### Add App to Site
+
+Go to the site we previously deployed the solution to access the site contents. Click on "Add" then select "App" from the menu. Select the SPFx solution we just deployed.
+
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/addAppToSite.png|alt=add app to site]]
 
 ### Add the WebPart
 
@@ -20,10 +30,10 @@ Click on the "+" button to add a webpart.
 
 [[https://github.com/gunjandatta/sp-dashboard/blob/master/images/addSPFxWebPart.png|alt=add spfx webpart]]
 
-Select the "ListWebPart" and the table will be displayed.
+Select the "Dashboard" and the solution will be displayed.
 
-[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/viewListTableSPFxWP.png|alt=view table]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/viewSPFxWebPart.png|alt=view table]]
 
-Clicking on "Edit" will display the edit form.
+Save and publish the page. Click on the "Create" or "Edit" button to view the list form.
 
-[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/editItemFormSPFx.png|alt=edit item form]]
+[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/editForm.png|alt=edit item form]]

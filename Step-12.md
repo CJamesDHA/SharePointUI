@@ -4,7 +4,14 @@
 
 ## Create the Project Folder
 
-Create the project folder, and navigate to it in your console. Below is the command to create the project.
+Create the project folder, by running the following command:
+
+```
+mkdir spfx
+cd spfx
+```
+
+Navigate to it in your console and run the command shown below to create the project.
 
 ```
 yo @microsoft/sharepoint

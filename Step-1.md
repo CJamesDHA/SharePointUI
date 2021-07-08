@@ -49,11 +49,12 @@ We will be using [webpack](https://webpack.js.org/) and [babel](https://babeljs.
     * [html-loader](https://www.npmjs.com/package/html-loader)
     * [node-sass](https://www.npmjs.com/package/node-sass)
     * [sass-loader](https://www.npmjs.com/package/sass-loader)
+    * [style-loader](https://www.npmjs.com/package/style-loader)
     * [ts-loader](https://www.npmjs.com/package/ts-loader)
     * [webpack-cli](https://webpack.js.org/api/cli/)
 
 ```
-npm i --save-dev @babel/core @babel/preset-env webpack webpack-cli babel-loader css-loader html-loader sass-loader ts-loader
+npm i --save-dev @babel/core @babel/preset-env webpack webpack-cli babel-loader css-loader html-loader sass-loader style-loader ts-loader
 ```
 _The '--save-dev' will update the package.json file's "devDependencies" property._
 

@@ -6,7 +6,7 @@ Now that we have built the solution, we'll demo it in SharePoint Online. These s
 
 ## Copy Assets
 
-Copy the ```sp-dashboard.js``` file to the site assets folder.
+Copy the ```assets\index.html``` & ```sp-dashboard.js``` files to the site assets 'sp-dashboard' sub-folder.
 
 ## Install the Solution
 
@@ -15,7 +15,7 @@ Copy the ```sp-dashboard.js``` file to the site assets folder.
 Press F-12 to access the browser's console. Type the following into the console:
 
 ```
-var s = document.createElement("script"); s.src = "/sites/demo/siteassets/sp-dashboard.js"; document.head.appendChild(s);
+var s = document.createElement("script"); s.src = "/sites/dev/siteassets/sp-dashboard/sp-dashboard.js"; document.head.appendChild(s);
 ```
 
 This will load our library and make the ```SPDashboard``` global variable available.
@@ -49,12 +49,10 @@ Save the webpart, wait for the page to refresh and close the page to view the li
 
 ## Uninstall the solution
 
-To uninstall the solution, simply run the following:
+To uninstall the solution, simply run the following command below. This will remove the SharePoint assets (list for this example).
 
 ```
 WPList.Configuration.uninstall();
 ```
-
-[[https://github.com/gunjandatta/sp-dashboard/blob/master/images/uninstallSolution.png|alt=uninstall solution]]
 
 ### [[Next Step|Step 11]]

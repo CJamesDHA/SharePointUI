@@ -6,12 +6,14 @@ We will go over the configuration files, which will be used to compile and bundl
 
 ## Update the Project Configuration (./package.json)
 
-We will update the project's configuration (package.json) file, which was created in the previous step. Find the "scripts" property and define the build and prod commands, to execute webpack to bundle the solution. The build command will bundle the raw JS, so we can debug the code. The prod command will minify the output.
+We will update the project's configuration (package.json) file, which was created in the previous step. Find the "main" property and update it to the main index file we will create later on. Find the "scripts" property and define the build and prod commands, to execute webpack to bundle the solution. The build command will bundle the raw JS, so we can debug the code. The prod command will minify the output.
 
 ```
+"main": "src/index.ts",
 "scripts": {
-  "build": "webpack --mode=development",
-  "prod": "webpack --mode=production"
+    "all": "npm run build && npm run prod",
+    "build": "webpack --mode=development",
+    "prod": "webpack --mode=production"
 }
 ```
 
@@ -19,9 +21,28 @@ We will update the project's configuration (package.json) file, which was create
 
 ### TypeScript (./tsconfig.json)
 
-
-```
+```json
 {
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es2015"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
+```
+
+### WebPack (./webpack.config.js)
+
+```js
+var project = require("./package.json");
+var path = require("path");
+
+// Return the configuration
 module.exports = (env, argv) => {
     var isDev = argv.mode !== "production";
     return {
