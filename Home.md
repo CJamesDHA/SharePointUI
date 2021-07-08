@@ -2,7 +2,7 @@
 
 This demo will give a step-by-step tutorial of creating a basic dashboard solution.
 
-![View Data](images/view-data.png)
+![View Data](images/demo.png)
 
 ## Required Tools
 
