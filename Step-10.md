@@ -31,21 +31,21 @@ _Note - Wait for the list installation to complete, before generating the test d
 
 _Note - If you are using IE, the 'Promise' library will need to be included. Reference the [webpack configuration](https://gunjandatta.github.io/dev/webpack) documentation for additional details._
 
-[[wiki/images/installSolution.png|alt=install solution]]
+![[wiki/images/installSolution.png|alt=install solution]]
 
 ## Add WebPart to Page
 
 Create a blank webpart page, edit it and add this webpart to it.
 
-[[wiki/images/addWebPart.png|alt=add webpart]]
+![[wiki/images/addWebPart.png|alt=add webpart]]
 
 After the page refreshes, edit the configuration and select the test list we created.
 
-[[wiki/images/wpConfiguration.png|alt=webpart configuration]]
+![[wiki/images/wpConfiguration.png|alt=webpart configuration]]
 
 Save the webpart, wait for the page to refresh and close the page to view the list data.
 
-[[wiki/images/viewListTable.png|alt=view list table]]
+![[wiki/images/viewListTable.png|alt=view list table]]
 
 ## Uninstall the solution
 
