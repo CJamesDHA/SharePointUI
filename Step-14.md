@@ -12,28 +12,28 @@ From the root of the project, run the ```npm run all``` command to build all sol
 
 ### Upload the App Package
 
-![wiki/images/addSPFxPackage.png|alt=add spfx package]
+![add spfx package](/gunjandatta/sp-dashboard/wiki/images/addSPFxPackage.png)
 
 Deploy the solution
 
-![wiki/images/deploySolution.png|alt=deploy solution]
+![deploy solution](/gunjandatta/sp-dashboard/wiki/images/deploySolution.png)
 
 ### Add App to Site
 
 Go to the site we previously deployed the solution to access the site contents. Click on "Add" then select "App" from the menu. Select the SPFx solution we just deployed.
 
-![wiki/images/addAppToSite.png|alt=add app to site]
+![add app to site](/gunjandatta/sp-dashboard/wiki/images/addAppToSite.png)
 
 ### Add the WebPart
 
 Click on the "+" button to add a webpart.
 
-![wiki/images/addSPFxWebPart.png|alt=add spfx webpart]]
+![add spfx webpart](/gunjandatta/sp-dashboard/wiki/images/addSPFxWebPart.png)
 
 Select the "Dashboard" and the solution will be displayed.
 
-![wiki/images/viewSPFxWebPart.png|alt=view table]
+![view table](/gunjandatta/sp-dashboard/wiki/images/viewSPFxWebPart.png)
 
 Save and publish the page. Click on the "Create" or "Edit" button to view the list form.
 
-![wiki/images/editForm.png|alt=edit item form]
+![edit item form](/gunjandatta/sp-dashboard/wiki/images/editForm.png)

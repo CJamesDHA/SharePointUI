@@ -10,7 +10,7 @@ Create the project folder, and navigate to it in your console. Below is the comm
 npm init --y
 ```
 
-![create project](wiki/images/createProject.png)
+![create project](/gunjandatta/sp-dashboard/wiki/images/createProject.png)
 
 ### Download Libraries
 
@@ -33,7 +33,7 @@ npm i --save dattatable gd-sprest-bs moment datatables.net datatables.net-bs5 jq
 _The 'i' is for "install"_
 _The '--save' will update the package.json file's "dependencies" property._
 
-![install dependencies](wiki/images/installDependencies.png)
+![install dependencies](/gunjandatta/sp-dashboard/wiki/images/installDependencies.png)
 
 #### Required for Packaging Solution
 
@@ -56,6 +56,6 @@ npm i --save-dev @babel/core @babel/preset-env webpack webpack-cli babel-loader 
 ```
 _The '--save-dev' will update the package.json file's "devDependencies" property._
 
-![install babel](wiki/images/installDevDependencies.png)
+![install dev dependencies](/gunjandatta/sp-dashboard/wiki/images/installDevDependencies.png)
 
 ### [[Next Step|Step 2]]
