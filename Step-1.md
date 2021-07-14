@@ -52,7 +52,7 @@ We will be using [webpack](https://webpack.js.org/) and [babel](https://babeljs.
     * [webpack-cli](https://webpack.js.org/api/cli/)
 
 ```
-npm i --save-dev @babel/core @babel/preset-env webpack webpack-cli babel-loader css-loader html-loader sass-loader style-loader ts-loader
+npm i --save-dev @babel/core @babel/preset-env webpack webpack-cli babel-loader css-loader html-loader node-sass sass-loader style-loader ts-loader
 ```
 _The '--save-dev' will update the package.json file's "devDependencies" property._
 
