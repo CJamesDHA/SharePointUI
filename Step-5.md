@@ -1,5 +1,17 @@
 ### [[Previous Step|Step 4]]
 
+# Content Editor WebPart Reference (assets/index.html)
+
+This file will be uploaded to SharePoint and referenced by the content editor webpart.
+
+```html
+<!-- The element to render the solution to -->
+<div id="sp-dashboard" class="bs"></div>
+
+<!-- Reference the solution script -->
+<script src="./sp-dashboard.js"></script>
+```
+
 # Configuration File (src/cfg.ts)
 
 This file will create the SharePoint assets listed below.
