@@ -20,7 +20,7 @@ Open the project in VS Code. Press ctrl+` to display the terminal, which will be
 
 Below are a list of libraries required to render the dashboard solution.
 
-* [dattatable](https://github.com/gunjandatta/dattatable)
+* [dattatable](https://github.com/datta-framework/dattatable)
     * [gd-sprest-bs](https://gunjandatta.github.io/extras/bs)
     * [moment](https://momentjs.com/)
 * [datatables.net](https://datatables.net/)
