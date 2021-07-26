@@ -66,7 +66,7 @@ export class App {
                 title: Strings.ProjectName,
                 items: [
                     {
-                        className: "btn-outline-dark",
+                        className: "btn-outline-light",
                         text: "Create Item",
                         isButton: true,
                         onClick: () => {
