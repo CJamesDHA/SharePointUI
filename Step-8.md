@@ -1,5 +1,13 @@
 ### [[Previous Step|Step 7]]
 
+# Custom Styling (src/styles.scss)
+
+We will create a custom file for styling the solution.
+
+```scss
+/** Custom Styles Go Here */
+```
+
 # Main Entry (src/index.ts)
 
 The main entry point of the project.
@@ -40,14 +48,6 @@ window[Strings.GlobalVariable] = {
         new App(el);
     }
 }
-```
-
-## Custom Styling (src/styles.scss)
-
-We will create a custom file for styling the solution.
-
-```scss
-/** Custom Styles Go Here */
 ```
 
 ### [[Next Step|Step 9]]
