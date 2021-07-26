@@ -125,6 +125,7 @@ export class App {
                             Components.ButtonGroup({
                                 el,
                                 buttons: [
+                                    // Render a View Button
                                     {
                                         text: item.Title,
                                         type: Components.ButtonTypes.OutlinePrimary,
@@ -135,11 +136,12 @@ export class App {
                                             });
                                         }
                                     },
+                                    // Render an Edit Button
                                     {
                                         text: "Edit",
                                         type: Components.ButtonTypes.OutlineSuccess,
                                         onClick: () => {
-                                            // Show the display form
+                                            // Show the edit form
                                             ItemForm.edit({
                                                 itemId: item.Id,
                                                 onUpdate: () => {
