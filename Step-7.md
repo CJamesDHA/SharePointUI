@@ -136,7 +136,7 @@ export class App {
                                         text: "Edit",
                                         type: Components.ButtonTypes.OutlineSuccess,
                                         onClick: () => {
-                                            // Show the display form
+                                            // Show the edit form
                                             ItemForm.edit({
                                                 itemId: item.Id,
                                                 onUpdate: () => {
