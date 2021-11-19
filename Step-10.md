@@ -12,6 +12,9 @@ Copy the ```assets\index.html``` & ```sp-dashboard.js``` files to the site asset
 
 ### Load the Library
 
+_A new "Installation Required" modal is now available so you no longer have to install a solution manually._
+_Wiki to be updated w/ the latest version and screenshot..._
+
 Press F-12 to access the browser's console. Type the following into the console:
 
 ```
