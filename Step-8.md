@@ -17,25 +17,22 @@ The main entry point of the project.
 - Global Variable
     - Configuration - Used to install/uninstall the solution
     - render - Reference for the SPFx project
+- Use "Installation Required" component to determine if an installation is required
+    - Displays a modal dialog to execute the Configuration's installation through the GUI
 
 ```ts
+import { InstallationRequired } from "dattatable";
 import { ContextInfo } from "gd-sprest-bs";
 import { App } from "./app";
 import { Configuration } from "./cfg";
+import { DataSource } from "./ds";
 import Strings from "./strings";
 
 // Styling
 import "./styles.scss";
 
-// Get the element and render the app if it is found
-let elApp = document.querySelector("#" + Strings.AppElementId) as HTMLElement;
-if (elApp) {
-    // Create the application
-    new App(elApp);
-}
-
 // Create the global variable for this solution
-window[Strings.GlobalVariable] = {
+const GlobalVariable = {
     Configuration,
     render: (el, context?) => {
         // See if the page context exists
@@ -44,9 +41,40 @@ window[Strings.GlobalVariable] = {
             ContextInfo.setPageContext(context);
         }
 
-        // Create the application
-        new App(el);
+        // Initialize the application
+        DataSource.init().then(
+            // Success
+            () => {
+                // Create the application
+                new App(el);
+            },
+
+            // Error
+            () => {
+                // See if an installation is required
+                InstallationRequired.requiresInstall(Configuration).then(installFl => {
+                    // See if an install is required
+                    if (installFl) {
+                        // Show the dialog
+                        InstallationRequired.showDialog();
+                    } else {
+                        // Log
+                        console.error("[" + Strings.ProjectName + "] Error initializing the solution.");
+                    }
+                });
+            }
+        );
     }
+};
+
+// Make is available in the DOM
+window[Strings.GlobalVariable] = GlobalVariable;
+
+// Get the element and render the app if it is found
+let elApp = document.querySelector("#" + Strings.AppElementId) as HTMLElement;
+if (elApp) {
+    // Create the application
+    new App(elApp);
 }
 ```
 
