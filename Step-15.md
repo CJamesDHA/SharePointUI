@@ -65,5 +65,3 @@ Search for the target team channel to deploy the app to. Click on `Set up a tab`
 Lastly, view the tab to confirm the dashboard app is available in the selected team channel.
 
 ![view in teams](/gunjandatta/sp-dashboard/wiki/images/viewInTeams.png)
-
-### [[Next Step|Step 14]]
