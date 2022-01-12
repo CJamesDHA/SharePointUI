@@ -24,12 +24,13 @@ declare var SPDashboard;
 
 * Load Data - Load the list data.
   * Set Page Context - In order for the $REST library to execute successfully, the page context will need to be set.
+  * Set the Source Url - We will manually set the location of where the solution is deployed.
 * Render the Table - After loading the data, render the table.
 
 ```
 public render(): void {
     // Render the application
-    SPDashboard.render(this.domElement, this.context.pageContext);
+    SPDashboard.render(this.domElement, this.context, "/sites/dev");
 }
 ```
 

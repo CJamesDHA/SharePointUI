@@ -37,3 +37,5 @@ Select the "Dashboard" and the solution will be displayed.
 Save and publish the page. Click on the "Create" or "Edit" button to view the list form.
 
 ![edit item form](/gunjandatta/sp-dashboard/wiki/images/editForm.png)
+
+### [[Next Step|Step 15]]

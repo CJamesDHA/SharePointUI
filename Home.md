@@ -25,3 +25,4 @@ This demo will give a step-by-step tutorial of creating a basic dashboard soluti
   - [[Create Project|Step 12]]
   - [[Code WebPart|Step 13]]
   - [[Demo|Step 14]]
+- [[Deploy to Teams|Step 15]]

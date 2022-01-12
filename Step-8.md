@@ -16,17 +16,16 @@ The main entry point of the project.
 - Render the application if the application element id is found
 - Global Variable
     - Configuration - Used to install/uninstall the solution
-    - render - Reference for the SPFx project
+    - render - Reference for the SPFx/Teams project
 - Use "Installation Required" component to determine if an installation is required
     - Displays a modal dialog to execute the Configuration's installation through the GUI
 
 ```ts
 import { InstallationRequired } from "dattatable";
-import { ContextInfo } from "gd-sprest-bs";
 import { App } from "./app";
 import { Configuration } from "./cfg";
 import { DataSource } from "./ds";
-import Strings from "./strings";
+import Strings, { setContext } from "./strings";
 
 // Styling
 import "./styles.scss";
@@ -34,11 +33,11 @@ import "./styles.scss";
 // Create the global variable for this solution
 const GlobalVariable = {
     Configuration,
-    render: (el, context?) => {
-        // See if the page context exists
+    render: (el, context?, sourceUrl?: string) => {
+        // See if the SPFx page context exists
         if (context) {
             // Set the context
-            ContextInfo.setPageContext(context);
+            setContext(context, sourceUrl);
         }
 
         // Initialize the application
@@ -73,8 +72,8 @@ window[Strings.GlobalVariable] = GlobalVariable;
 // Get the element and render the app if it is found
 let elApp = document.querySelector("#" + Strings.AppElementId) as HTMLElement;
 if (elApp) {
-    // Create the application
-    new App(elApp);
+    // Render the application
+    GlobalVariable.render(elApp);
 }
 ```
 

@@ -2,7 +2,7 @@
 
 # Data Source (src/ds.ts)
 
-Code which interacts with SharePoint.
+Code which interacts with SharePoint. We will reference the `SourceUrl` to target the current web for SPFx/Teams solutions. The source url can be dynamically set by the SPFx webpart to target specific webs.
 
 - Defines a custom interface for intellisense in other files
 - StatusFilters - Global Variable
@@ -10,7 +10,7 @@ Code which interacts with SharePoint.
 - load - Loads the list data
 
 ```ts
-import { Components, List, Types } from "gd-sprest-bs";
+import { Components, Types, Web } from "gd-sprest-bs";
 import Strings from "./strings";
 
 // Item
@@ -30,7 +30,7 @@ export class DataSource {
         // Return a promise
         return new Promise((resolve, reject) => {
             // Get the status field
-            List(Strings.Lists.Main).Fields("Status").execute((fld: Types.SP.FieldChoice) => {
+            Web(Strings.SourceUrl).Lists(Strings.Lists.Main).Fields("Status").execute((fld: Types.SP.FieldChoice) => {
                 let items: Components.ICheckboxGroupItem[] = [];
 
                 // Parse the choices
@@ -89,7 +89,7 @@ export class DataSource {
         // Return a promise
         return new Promise((resolve, reject) => {
             // Load the data
-            List(Strings.Lists.Main).Items().query({
+            Web(Strings.SourceUrl).Lists(Strings.Lists.Main).Items().query({
                 GetAllItems: true,
                 OrderBy: ["Title"],
                 Top: 5000
