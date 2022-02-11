@@ -1,14 +1,8 @@
 ### [[Previous Step|Step 12]]
 
-# Set Page Context
-
-SPFx solution will require the page context to be set. Since we will reference the classic solution, we will need to set the page context in the library.
-
-## src/index
-
 # Copy Assets
 
-## spfx/src/webparts/listWebPart/ListWebPartWebPart.ts
+## spfx/src/webparts/Dashboard/DashboardWebPart.ts
 
 ### Reference the Library
 
