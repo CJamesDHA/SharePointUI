@@ -26,6 +26,17 @@ To deploy a solution to Teams, you must set the `skipFeatureDeployment` option t
 
 Increment the `version` number from `0.0.0.1` to `0.0.0.2`. Since the solution is already deployed to the app catalog, we will need to increment the version in order to upgrade the existing solution in the app catalog.
 
+### Set the Source Url (spfx/src/webparts/dashboard/DashboardWebPart.ts)
+
+Update the render function and set the "Source URL" to the render method, otherwise it will assume you want to store the solution in the teams site.
+
+```
+public render(): void {
+    // Render the application
+    SPDashboard.render(this.domElement, this.context, "/sites/dev");
+}
+```
+
 ### Rebuild the Package
 
 From the root of the project, run the ```npm run all``` command to build all solutions.

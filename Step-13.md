@@ -24,7 +24,7 @@ declare var SPDashboard;
 ```
 public render(): void {
     // Render the application
-    SPDashboard.render(this.domElement, this.context, "/sites/dev");
+    SPDashboard.render(this.domElement, this.context);
 }
 ```
 
